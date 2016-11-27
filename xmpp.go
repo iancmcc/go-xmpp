@@ -32,8 +32,8 @@ import (
 	"strings"
 	"time"
 
-	cset "github.com/paulrosania/charset/charset"
-	_ "github.com/paulrosania/charset/data"
+	cset "github.com/paulrosania/go-charset/charset"
+	_ "github.com/paulrosania/go-charset/data"
 )
 
 const (
