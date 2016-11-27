@@ -31,6 +31,9 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	cset "github.com/paulrosania/charset/charset"
+	_ "github.com/paulrosania/charset/data"
 )
 
 const (
@@ -499,6 +502,7 @@ func (c *Client) startStream(o *Options, domain string) (*streamFeatures, error)
 	} else {
 		c.p = xml.NewDecoder(c.conn)
 	}
+	c.p.CharsetReader = cset.NewReader
 
 	_, err := fmt.Fprintf(c.conn, "<?xml version='1.0'?>\n"+
 		"<stream:stream to='%s' xmlns='%s'\n"+
